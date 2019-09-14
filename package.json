@@ -1,0 +1,24 @@
+{
+  "name": "animations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel public/index.html --port 9300",
+    "build": "parcel build public/index.html"
+  },
+  "dependencies": {
+    "gsap": "^2.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-clean-dist": "^0.0.6",
+    "postcss": "^7.0.18",
+    "postcss-color-hex-alpha": "^5.0.3",
+    "sass": "^1.22.12"
+  }
+}

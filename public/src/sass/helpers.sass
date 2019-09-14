@@ -1,0 +1,26 @@
+@function retC($type)
+  $retval: 100
+  @if $type == 'px'
+    $retval: 100px
+  @else if $type == '%'
+    $retval: 100%
+  @else if $type == 'vh'
+    $retval: 100vh
+  @else if $type == 'vw'
+    $retval: 100vw
+  @return $retval
+  
+@mixin padding-vertical($val)
+  padding-top: $val
+  padding-bottom: $val
+
+@mixin padding-horizontal($val)
+  padding-right: $val
+  padding-left: $val
+
+@function randColor()
+  $red: random(256)
+  $green: random(256)
+  $blue: random(256)
+  $color: rgb($red, $green, $blue)
+  @return $color

@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "autoprefixer": {},
+    "postcss-color-hex-alpha": {},
+    "cssnano": {
+      "preset": [
+        "default",
+        { "calc": false, "discardComments": { "removeAll": true } }
+      ]
+    }
+  }
+}

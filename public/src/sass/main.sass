@@ -1,0 +1,269 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css)
+
+@import reset
+@import helpers
+
+$pcolor: #326fcff0
+
+.p-header
+  position: fixed
+  width: 100%
+  z-index: 100
+  *
+    color: #fff
+    text-decoration: none
+  nav
+    position: relative
+    width: 100%
+    display: inline-flex
+    height: 4rem
+    justify-content: space-between
+    align-items: center
+    @include padding-horizontal(1rem)
+    background: $pcolor
+    ul
+      display: flex
+      li
+        position: relative
+        list-style: none
+        transition: background 300ms ease-in-out
+        cursor: pointer
+        @include padding-vertical(1.5rem)
+        @include padding-horizontal(1rem)
+        &:after
+          position: absolute
+          height: 100%
+          width: 0
+          opacity: .1
+          content: ''
+          top: -5px
+          left: 0
+          border-bottom: 5px solid #fff
+          transition: opacity, width 170ms ease-in-out
+        &:hover, &.active
+          background: #3336
+          &:after
+            width: 100%
+            opacity: 1
+        a
+          text-align: center
+          width: 2rem
+          height: 1.5rem
+          font-weight: bold
+    .menu
+      display: none
+    @media screen and (max-width: 700px)
+      .menu
+        display: block
+      ul
+        background: $pcolor
+        top: 4rem
+        right: 0
+        position: absolute
+        display: none
+
+
+.page
+  @include padding-vertical(2rem)
+  @include padding-horizontal(2rem)
+  padding-top: 4rem
+  min-height: calc(100vh)  
+  display: flex
+  flex-direction: column
+  background-attachment: fixed
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  *
+    color: #fff
+  h2
+    margin-bottom: 2rem
+    font-size: 2.5rem
+  &#home
+    background-color: #333
+    background-image: url(https://source.unsplash.com/1600x900/?code,pc)
+    justify-content: center
+    .content
+      position: relative
+      background: #333b
+      box-shadow: 0 0 2px 1px #333b, 0 0 5px #333a, 0 0 9px #4448, 0 0 12px #5556, 0 0 15px #6664, 0 0 17px #aaa2
+      border-radius: 10px
+      padding: 1rem
+      p
+        margin-left: 10px
+    .title
+      font-size: 2.7rem
+      text-shadow: .5px .5px #ddd, 1px 1px #bbb, 1.5px 1.5px #999, 2px 2px #777, 2.5px 2.5px #555, 3.5px 3.5px #222
+  &#products
+    background-color: #333
+    background-image: url(https://source.unsplash.com/1600x900/?airport,airplane,travel)
+  &#contact
+    background-color: #333
+    background-image: url(https://source.unsplash.com/1600x900/?company,reunion,business)
+    h2
+      text-shadow: 3px 2px #3338
+  &#about
+    background-color: #333
+    background-image: url(https://source.unsplash.com/1600x900/?about,company,reunion,business)
+    h2
+      font-size: 2.7rem
+      text-shadow: .5px .5px #ddd, 1px 1px #bbb, 1.5px 1.5px #999, 2px 2px #777, 2.5px 2.5px #555, 3.5px 3.5px #222
+    p
+      margin-top: 10px
+      margin-bottom: 20px
+      span
+        margin-left: 15px
+    .info
+      background: #333a
+      border-radius: 5px
+      padding: 1rem
+  &#blog
+    background: #5e35b1
+    
+.list
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+  justify-content: space-between
+  @media screen and (max-width: 700px)
+    flex-direction: column
+    align-items: center
+
+.card
+  position: relative
+  width: 320px
+  height: 380px
+  background: #fff
+  padding: 1rem 1.5rem
+  border-radius: 5px
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+  margin: 15px
+  box-shadow: 0 0 2px 1px #eee7
+  &:hover
+    box-shadow: 0 0 7px 1px #eeed
+  *
+    color: #666
+  img
+    width: 100%
+    border-bottom: 1px solid #aaa5
+    border-radius: 5px
+  .body
+    button
+      width: 100%
+      padding: 10px
+      margin-top: 12px
+      border-radius: 5px
+      border: none
+      background: #7765bb
+      color: #fff
+      box-shadow: 0 0 5px #333a
+      &:hover
+        opacity: .9
+        box-shadow: 0 0 5px #3333
+
+.modal
+  // display: none
+  position: fixed
+  width: 100%
+  height: 100%
+  background: linear-gradient(to bottom, #6669, #0007)
+  z-index: 1000
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  .modal-content
+    position: relative
+    width: 75%
+    background: #fff
+    border-radius: 10px
+    box-shadow: 0 0 10px #eee7
+    padding: 1.7rem
+    *
+      color: #333
+    .close
+      top: 8px
+      right: 12px
+      color: #3337
+      font-weight: bold
+      position: absolute
+      background: none
+      border: none
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    .body
+      width: 45%
+      h1
+        font-size: 2.5rem
+        margin-bottom: 1.2rem
+      p
+        font-size: 1.2rem
+    @media screen and (max-width: 700px)
+      flex-direction: column
+    img
+      width: 50%
+
+.contacts
+  width: 50%
+  margin: 1rem auto 0
+  background: #fff
+  padding: 1rem 1.5rem
+  border-radius: 5px
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  box-shadow: 0 0 10px 1px #eeee
+  *
+    color: #333
+    text-decoration: none
+  a
+    cursor: pointer
+    font-size: 1.5rem
+    margin: 0 1rem
+    transition: color, text-shadow 200ms ease-in-out
+    &:hover
+      color: #fff
+      text-shadow: 2px 3px #333, -.5px -1px #666
+  form
+    width: 100%
+    height: unset
+    // display: 
+    label
+      position: relative
+      display: block
+      margin-top: 10px
+      left: -1000px
+      opacity: 0
+      *
+        display: block
+    input, textarea
+      margin-top: 10px 
+      border: 1px solid #ddd
+      border-radius: 5px
+      width: 100%
+      padding: 10px
+    textarea
+      min-height: 100px
+      resize: unset
+    button
+      position: relative
+      // width: 100%
+      padding: 10px
+      border: none
+      color: transparent
+      font-weight: bold
+      border-radius: 5px
+      margin-top: 10px
+      background: #32b82df0
+      &:hover
+        opacity: .8
+  @media screen and (max-width: 700px)
+    width: 98%
